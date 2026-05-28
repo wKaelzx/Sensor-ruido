@@ -7,6 +7,7 @@ class SENSOR{
 
 private:
     uint8_t pin;
+    bool type; // true = analogico false = digital
 public:
     SENSOR(uint8_t pin);
     int read();

@@ -3,10 +3,10 @@
 
 #define PIN 8
 #define SENSE 20
+#define TYPE true
 
 SENSOR sensor(PIN);
 int noise = 0;
-int buffer = 0;
 
 void setup()
 {
@@ -15,9 +15,16 @@ void setup()
 
 void loop()
 {
-    Serial.println(sensor.getPercentage(20));
-    delay(100);
+    noise = sensor.getPercentage(50);
+    Serial.printf("Coeficiente de barulho e: %d\n",noise);
+    if(noise <= 15){
+        Serial.println("Barulho baixo");
+    }
+    else if(noise >= 30 && !(noise >= 60)){
+        Serial.println("Barulho normal");
+    }
+    else if(noise >= 60){
+        Serial.println("Barulho alto");
+    }
+    delay(10);
 }
-
-// passou 70 manda alerta so
-// TODO modo economia
