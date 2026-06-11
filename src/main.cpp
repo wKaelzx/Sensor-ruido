@@ -1,30 +1,22 @@
 #include <Arduino.h>
 #include "KY038.h"
 
-#define PIN 8
-#define SENSE 20
-#define TYPE true
+#define PIN_MIC 9
 
-SENSOR sensor(PIN);
-int noise = 0;
+void SensorUmidadeTemperatura();
+void configurarSensor();
+
+float temperatura;
+float umidade;
+
+SENSOR sensor(PIN_MIC);
 
 void setup()
 {
-    Serial.begin(9600);
+Serial.begin(9600);
 }
 
 void loop()
 {
-    noise = sensor.getPercentage(50);
-    Serial.printf("Coeficiente de barulho e: %d\n",noise);
-    if(noise <= 15){
-        Serial.println("Barulho baixo");
-    }
-    else if(noise >= 30 && !(noise >= 60)){
-        Serial.println("Barulho normal");
-    }
-    else if(noise >= 60){
-        Serial.println("Barulho alto");
-    }
-    delay(10);
+  Serial.println(sensor.getPercentage(50));
 }

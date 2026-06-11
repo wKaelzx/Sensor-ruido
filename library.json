@@ -1,0 +1,23 @@
+{
+    "nome": "Ruido_Sensor_Digital",
+    "version": "1.0.0",
+    "description": "Biblioteca para controle não bloqueante de sensores digitais",
+    "keywords": [
+        "sensor",
+        "mic",
+        "sound",
+        "arduino",
+        "esp32",
+        "non-blocking"
+    ],
+    "Authors": [
+        {
+            "nome": "Kael",
+            "email": "emaildokael@email.com"
+        }
+    ],
+    "license": "MIT",
+    "framework": "Arduino",
+    "plataforms": "*",
+    "headers": "LED.h"
+}
